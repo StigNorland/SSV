@@ -58,29 +58,59 @@ G    = α_G · ℏc · α² / (N_p² m_e²) # gravitational constant (structural
 
 ---
 
-## Repository Contents
+## Repository Structure
 
-| File | Description |
-|------|-------------|
-| `bh_eigenfrequency.py` | BH eigenfrequency and node spacing calculator for any galaxy |
-| `calculate_velocity_profile.py` | Rotation curve model: baryonic + disc soliton + superfluid modes |
-| `calibration_analysis.py` | Five-galaxy calibration of C; dimensional derivation from fundamental constants |
-| `0224.dat` | NGC 224 (M31) HI rotation curve — 625 points at 0.05 kpc steps (Chemin et al. 2009) |
-| `SSV-01-draft-07.tex` | Paper I (particle spectrum) |
-| `SSV-02-draft-08.tex` | Paper II (forces + gravity) |
-| `SSV-03-draft-06.tex` | Paper III (thermodynamics + time) |
-| `SSV-04a-draft-02.tex` | Paper IV-a (galactic resonances + M31 fit) |
-| `SSV-04b-draft-02.tex` | Paper IV-b (galactic morphology + Hubble sequence) |
-| `SSV-05-draft-01.tex` | Paper V (quantum gravity + cosmogony) |
-
----
-
-## Quick Start
-
-```bash
-python bh_eigenfrequency.py           # eigenfrequency table across BH mass range
-python calculate_velocity_profile.py  # rotation curve for Milky Way parameters
-python calibration_analysis.py        # verify C; derive A from fundamental constants
+```
+SSV/
+├── Code/
+│   ├── Paper I/
+│   │   └── python/                          # 17 Python scripts for Paper I
+│   │       ├── arnold_tongue_scan.py         # Arnold tongue bifurcation analysis
+│   │       ├── canonical_four_mode.py        # Four-mode canonical system
+│   │       ├── chiral_bridge_projection.py   # Chiral bridge geometry projection
+│   │       ├── chiral_kelvin_sweep.py        # Kelvin wave sweep with chirality
+│   │       ├── curved_torus_relaxation.py    # Toroidal geometry relaxation
+│   │       ├── direct_bdg_projection.py      # Bogoliubov-de Gennes projection
+│   │       ├── harmonic_ladder_spectrum.py   # α-harmonic mass ladder calculations
+│   │       ├── kelvin_augmented_bdg.py       # Kelvin wave augmented BdG solver
+│   │       ├── kelvin_branch_tracking.py     # Kelvin wave branch tracing
+│   │       ├── kelvin_self_induction.py      # Self-induction of Kelvin waves
+│   │       ├── muon_mode_prototype.py        # Muon mode topological defect
+│   │       ├── projected_two_mode_eigen.py   # Two-mode eigenvalue projection
+│   │       ├── restricted_bdg_matrix.py      # Restricted BdG matrix formulation
+│   │       ├── restricted_bdg_three_mode.py  # Three-mode BdG analysis
+│   │       ├── toroidal_background.py        # Toroidal background ansatz
+│   │       ├── toroidal_projection_integrals.py  # Toroidal projection integrals
+│   │       └── vortex_profile.py             # Vortex ring profile calculations
+│   ├── Paper II/                             # (code forthcoming)
+│   ├── Paper III/                            # (code forthcoming)
+│   ├── Paper IVa/                            # (code forthcoming)
+│   ├── Paper IVb/                            # (code forthcoming)
+│   └── Paper V/                              # (code forthcoming)
+│
+├── Papers/
+│   ├── SSV-01.lex                            # Paper I manuscript
+│   ├── SSV-02.lex                            # Paper II manuscript
+│   ├── SSV-03.lex                            # Paper III manuscript
+│   ├── SSV-04a.lex                           # Paper IV-a manuscript
+│   ├── SSV-04b.lex                           # Paper IV-b manuscript
+│   ├── SSV-05.lex                            # Paper V manuscript
+│   └── figures/
+│       ├── electron_minimization_logse.jpg   # Electron energy minimization plot
+│       ├── fig1_rotation_curve.jpg           # Rotation curve figure
+│       ├── fig2_multi_galaxy.jpg             # Multi-galaxy comparison
+│       ├── fig2_six_galaxies.jpg             # Six-galaxy dataset
+│       ├── fig_2d_disc_model.jpg             # 2D disc model visualization
+│       └── fig_galaxy_morphology.jpg         # Galaxy morphology / Hubble sequence
+│
+└── logs/
+    └── Paper I/                              # Derivation notes for Paper I
+        ├── muon-derivation-program.md
+        ├── muon-helicity-bridge-derivation.md
+        ├── muon-paper-ready-section.md
+        ├── muon-two-mode-symbolic-reduction.md
+        ├── toroidal-background-ansatz.md
+        └── toroidal-projection-integrals-notes.md
 ```
 
 ---
@@ -113,49 +143,4 @@ The SSV shares mathematical structure with Volovik's *Universe in a Helium Dropl
 ## Author
 
 **Stig Norland** — Independent Researcher, Bergen, Norway  
-*All papers in preparation for arXiv submission (physics.gen-ph), 2026.*# SSV – Saturated Superfluid Vacuum
-
-Code repository for the **Resonant Cosmos** framework.
-
-## Overview
-
-This project develops a cosmological model where:
-
-- The quantum vacuum is treated as a **superfluid**.
-- Newtonian gravity is unchanged for baryonic matter.
-- Galaxy rotation curves are explained by **standing gravity waves** — resonance modes driven by the spinning central black hole, analogous to a laser cavity.
-- The BH eigenfrequency scales as `f_BH = f_proton × (m_proton / M_BH)`.
-- Node spacing scales as `Δr = C / M_BH`, with `C ≈ 1.8×10⁹ kpc·M☉`.
-- Within the disc plane, time runs slower — this produces the flat rotation curve without dark matter.
-
-## Files
-
-| File | Description |
-|------|-------------|
-| `bh_eigenfrequency.py` | BH eigenfrequency and node spacing (Δr) calculator for any galaxy. Anchored to the proton Compton frequency. |
-| `calculate_velocity_profile.py` | Galaxy rotation curve model combining Newtonian, disc, and superfluid-vortex components. |
-| `calibration_analysis.py` | Derivation and verification of the calibration constant C across multiple galaxies. Includes dimensional analysis for the standing-wave amplitude A. |
-| `0224.dat` | NGC 224 (M31 / Andromeda) high-resolution rotation curve data. 625 points at 0.05 kpc steps. |
-
-## Key Relations
-
-```
-f_BH = f_p × (m_p / M_BH)       # BH eigenfrequency
-Δr   = C / M_BH                  # node spacing (kpc), M_BH in M☉
-C    = v_f / (f_p × m_p) × M☉   # calibration constant (derived)
-Δr × r_s = A²                    # Schwarzschild invariant
-```
-
-where `f_p ≈ 2.27×10²³ Hz` is the proton Compton frequency and `r_s` is the BH Schwarzschild radius.
-
-## Quick Start
-
-```bash
-python bh_eigenfrequency.py        # eigenfrequency table for a range of BH masses
-python calculate_velocity_profile.py  # plot rotation curve for Milky Way parameters
-python calibration_analysis.py     # verify C and search for A from first principles
-```
-
-## Status
-
-The theory is internally consistent. One remaining step is the disc-soliton BdG (Bogoliubov–de Gennes) calculation to derive `A ≈ 1.35 ly` from `{c, G, ħ, Λ, m_e}` alone — which would close the theory with zero free parameters.
+*All papers in preparation for arXiv submission (physics.gen-ph), 2026.*
