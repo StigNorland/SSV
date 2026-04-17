@@ -65,8 +65,14 @@ the planar LogSE vortex carries no bound breathing mode, establishing the 3D
 geometry as essential for the muon derivation.
 
 Two empirical inputs ($m_e$, $\alpha$) are used; all other results are derived.
-The open problems for Paper~2 are: full 3D minimisation for the muon and proton,
-and the first-principles derivation of $\alpha$ from Bogoliubov mode ratios.
+The muon problem is now formulated as a two-mode collective-coordinate eigenvalue
+problem (ring-breathing coordinate $q$ coupled to the lowest chiral transverse
+mode $\chi$); numerical projection integrals on the thin-ring toroidal background
+identify the sine-parity channel as the only symmetry-allowed coupling and give
+$\hat K_{R\chi}\approx0.26$ (grid-converged).  The remaining open problems for
+Paper~2 are: completing this calculation on the fully relaxed toroidal solution,
+the proton form factor $F$, and the first-principles derivation of $\alpha$ from
+Bogoliubov mode ratios.
 \end{abstract}
 
 \newpage
@@ -722,6 +728,26 @@ the central calculation for Paper~2.  Until then:
 \end{equation}
 is a \emph{motivated numerical coincidence}, not a derived result.
 
+\textbf{Two-mode formulation (programme for Paper~2).}
+Introduce fractional ring-breathing $q(t)$ and chiral-transverse amplitude $\chi(t)$
+as collective coordinates.  Quadratic expansion of $\mathcal{L}+\mathcal{L}_\perp$
+around the static torus gives
+\begin{equation}
+  S^{(2)}=\tfrac12\!\int\! dt\bigl[
+  M_R\dot q^2+M_\chi\dot\chi^2-K_R q^2-K_\chi\chi^2-2Gq\chi
+  \bigr],
+  \label{eq:two-mode-action}
+\end{equation}
+with normal-mode condition $\det(K_{ab}-\omega^2 M_{ab})=0$.
+Numerical projection integrals on the thin-ring toroidal background with
+the numerically solved vortex profile (Appendix~\ref{app:bdg}) establish
+a parity selection rule: the cosine chiral seed
+$\Phi_\chi^{(\cos)}\propto g_\chi(\tilde s)\cos\vartheta\,e^{i\vartheta}$ is
+parity-forbidden at leading order ($K_{R\chi}^{(\cos)}\approx0$), while the
+sine partner $\Phi_\chi^{(\sin)}\propto g_\chi(\tilde s)\sin\vartheta\,e^{i\vartheta}$
+gives $\hat K_{R\chi}\approx0.26$ (natural units, grid-converged to $1\%$).
+This identifies the symmetry sector and coupling strength for the Paper~2 computation.
+
 \subsection{Higher rungs and the proton}
 
 The charged kaon at $m_{K^\pm}=493.677\,\text{MeV} = 7.05\,\mu_0$ extends the
@@ -826,16 +852,21 @@ separations with the LogSE potential~\eqref{eq:pot}, and show the global minimum
 occurs at $L=2R_e$.
 \end{gapbox}
 
-\begin{gapbox}[Open Problem 2 — Muon: ring-breathing eigenfrequency]
+\begin{gapbox}[Open Problem 2 — Muon: two-mode ring-breathing + chiral eigenfrequency]
 The muon assignment $m_{\mu^\pm}=(3/2)\mu_0$ is a motivated numerical coincidence
-(§\ref{sec:ladder}).  The required computation is: solve the Bogoliubov--de~Gennes
-equations linearised around the equilibrium toroidal vortex in 3D with
-$\mathcal{L}+\mathcal{L}_\perp$, retain the full ring curvature and chiral-shear
-coupling, and extract the lowest coupled ring-breathing + chiral eigenfrequency.
+(§\ref{sec:ladder}).  The problem is now formulated as a two-mode collective-coordinate
+eigenvalue problem: reduce the LogSE$+\mathcal{L}_\perp$ action around the equilibrium
+torus to the form~\eqref{eq:two-mode-action}, with $q$ the fractional ring-breathing
+and $\chi$ the lowest chiral transverse mode.  Numerical projection integrals on the
+thin-ring toroidal ansatz (§\ref{sec:muon}) establish the parity selection rule:
+only the sine-parity channel $\Phi_\chi^{(\sin)}$ couples to $q$ at leading order
+(the cosine partner is forbidden), with converged coupling $\hat K_{R\chi}\approx0.26$.
 The prediction is $\omega_{\rm muon}/\omega_c = m_\mu/m_e \approx 206.77$.
 Given $\omega_{\rm ring}\approx0.016\,\omega_c$ from string tension alone
 (Eq.~\ref{eq:omega-ring-exact}), the chiral coupling must supply a factor
-${\sim}13$ enhancement — a quantitative target for the 3D calculation.
+${\sim}13$ enhancement.  The required completion: evaluate all five two-mode
+matrix elements $(M_R, M_\chi, K_R, K_\chi, G)$ on the fully relaxed toroidal
+solution and extract the normal-mode eigenfrequency.
 \end{gapbox}
 
 \begin{gapbox}[Open Problem 3 — Proton: form factor $F$ preliminary numerical estimate]
@@ -863,8 +894,9 @@ this paper derives from the LogSE Lagrangian: (i)~the compressible-fluid
 structure via Madelung decomposition; (ii)~the longitudinal sound speed
 $c_s=\sqrt{2b\rho_0/m_0}$ identifying $c$ and fixing all medium parameters;
 (iii)~the electron mass formula $m_ec^2=\frac12\rho_0\kappa_0^2 R_e\Lambda$
-from the Lamb vortex-ring energy, self-consistently placing the torus radius
-at $R_e\approx\hbar/(\alpha m_ec)$; (iv)~the gyromagnetic ratio $g\approx2$
+from the Lamb vortex-ring energy, with the unique equilibrium radius
+$R_e^*=\hbar/(\alpha m_ec)$ derived as the true energy minimum of the
+three-term GPE functional; (iv)~the gyromagnetic ratio $g\approx2$
 from the current-loop and topological-spin argument; (v)~the fine-structure
 constant as $\alpha=c_\perp/c$ from the chiral-shear coupling constant.
 The pion mass $m_\pi=2m_e/\alpha$ follows from the two-winding topology
@@ -1073,8 +1105,13 @@ of the following ingredients absent from the current Lagrangian:
         (major-circle oscillations), not just radial core pulsations.
         The ring-breathing mode has a restoring force from string tension
         and is qualitatively different from the minor-circle $s$-mode
-        studied here.  This is the leading candidate and is the priority
-        calculation for Paper~2.
+        studied here.  This is the leading candidate.  The two-mode
+        collective-coordinate framework of §\ref{sec:muon}
+        provides the eigenvalue formulation, and numerical projection
+        integrals have identified the sine-parity chiral channel with
+        $\hat K_{R\chi}\approx0.26$; the priority computation for
+        Paper~2 is to evaluate all matrix elements on the fully
+        relaxed torus and extract the eigenfrequency.
   \item \textbf{Attractive modification to the potential.}  A term
         $-\beta\,f_0^2$ with $\beta>0$ added to $V_{\rm eff}$ could
         create a well.  The chiral-shear term contributes
