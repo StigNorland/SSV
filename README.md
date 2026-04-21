@@ -16,10 +16,10 @@ All particles are stable topological defects (toroidal vortex rings). All forces
 | **II** | The Four Forces as Hydrodynamic Pressure-Gradient Modes | Draft complete |
 | **III**| Irreversible Time and Wake Entropy | In draft |    
 | **IV**| Gravity as Update-Capacity Gradient | -|
-| **V** | Condensate Black Holes | - |
+| **V**| Condensate Black Holes | - |
 | **VI-a**| Flat Rotation Curves | - |
 | **VI-b**| Galactic Morphology as Overtone Structure | - |
-| ** VII-a| Quantum Mechanics  | - |
+| **VII-a**| Quantum Mechanics  | - |
 | **VII-b**| Emergent Geometry | - |
 | **VIII**| Cosmogony | - |
 
