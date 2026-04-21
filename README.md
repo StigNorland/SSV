@@ -1,6 +1,6 @@
 # SSV – Saturated Superfluid Vacuum
 
-**A five-paper theoretical physics framework deriving particles, forces, gravity, thermodynamics, and cosmology from a single postulate.**
+**A ten-paper theoretical physics framework deriving particles, forces, gravity, thermodynamics, and cosmology from a single postulate.**
 
 > *The physical vacuum is a compressible inviscid superfluid near saturation density.*
 
