@@ -14,10 +14,7 @@ All particles are stable topological defects (toroidal vortex rings). All forces
 |-------|-------|--------|
 | **I** | Particle Spectrum as Topological Defects and the α-Harmonic Mass Ladder | Draft complete |
 | **II** | The Four Forces as Hydrodynamic Pressure-Gradient Modes | Draft complete |
-| **III** | Thermodynamics, Entropy as Vortex-Tangle Complexity, and Irreversible Time | Draft complete |
-| **IV-a** | Galactic-Scale Resonances, Flat Rotation Curves, and the Andromeda Satellite Plane | Draft complete |
-| **IV-b** | Galactic Morphology as the Overtone Spectrum of the Central Black Hole Resonance | Draft complete |
-| **V** | Quantum Gravity as Hydrodynamics and Cosmogony from the Permissive Void | Draft complete |
+
 
 ---
 
@@ -33,16 +30,6 @@ All particles are stable topological defects (toroidal vortex rings). All forces
 - No graviton required; UV divergence of quantum gravity dissolves at the vortex core scale ξ
 - Equivalence principle has a mechanical origin: all defects couple to gravity through acoustic cross-section
 
-**Galactic dynamics (Papers IV-a/b)**
-- Galaxy disc = resonant cavity driven by central BH at eigenfrequency f_BH = f_p · (m_p / M_BH)
-- Node spacing: Δr = C / M_BH, with C ≈ 1.808 × 10⁹ kpc·M☉ (derived from {ħ, G, m_e, m_p, α})
-- M31 fit: RMS ~7.5 km/s vs NFW ~27 km/s at equal parameter count; ΔAIC ≈ −41.8
-- Full Hubble morphological sequence (rings → spirals → flocculent) from azimuthal modes m = 0, 1, 2, 3, …
-
-**Cosmology (Papers IV-a/b, V)**
-- Λ = 0: dark energy is identified as a SNe Ia measurement artefact (host-galaxy age bias)
-- Five-stage cosmogony: Permissive Void → Kibble-Zurek vortex nucleation → particle condensation
-- Arrow of time as vortex-tangle complexity growth (no separate thermodynamic postulate)
 
 ---
 
@@ -82,19 +69,10 @@ SSV/
 │   │       ├── toroidal_background.py        # Toroidal background ansatz
 │   │       ├── toroidal_projection_integrals.py  # Toroidal projection integrals
 │   │       └── vortex_profile.py             # Vortex ring profile calculations
-│   ├── Paper II/                             # (code forthcoming)
-│   ├── Paper III/                            # (code forthcoming)
-│   ├── Paper IVa/                            # (code forthcoming)
-│   ├── Paper IVb/                            # (code forthcoming)
-│   └── Paper V/                              # (code forthcoming)
-│
+│   ├── Paper II/                             # (code forthcoming)│
 ├── Papers/
 │   ├── SSV-01.lex                            # Paper I manuscript
 │   ├── SSV-02.lex                            # Paper II manuscript
-│   ├── SSV-03.lex                            # Paper III manuscript
-│   ├── SSV-04a.lex                           # Paper IV-a manuscript
-│   ├── SSV-04b.lex                           # Paper IV-b manuscript
-│   ├── SSV-05.lex                            # Paper V manuscript
 │   └── figures/
 │       ├── electron_minimization_logse.jpg   # Electron energy minimization plot
 │       ├── fig1_rotation_curve.jpg           # Rotation curve figure
